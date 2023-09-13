@@ -78,7 +78,7 @@ d3.json(url).then(function(data) {
         Plotly.newPlot("bubble", data2);
 
 
-        let li1 = d3.select(".panel-body").append("div").text("id: " + String(data.metadata[0].age));
+        let li1 = d3.select(".panel-body").append("div").text("id: " + String(data.metadata[0].id));
         let li2 = d3.select(".panel-body").append("div").text("ethnicity: "+ String(data.metadata[0].ethnicity));
         let li3 = d3.select(".panel-body").append("div").text("gender: "+ String(data.metadata[0].gender));
         let li4 = d3.select(".panel-body").append("div").text("age: "+ String(data.metadata[0].age));
@@ -86,13 +86,13 @@ d3.json(url).then(function(data) {
         let li6 = d3.select(".panel-body").append("div").text("bbtype: "+ String(data.metadata[0].bbtype));
         let li7 = d3.select(".panel-body").append("div").text("wfreq: "+ String(data.metadata[0].wfreq));
 
-        li1.classList.add('id');
-        li2.id = 'ethnicity';
-        li3.id = 'gender';
-        li4.id = 'age';
-        li5.id = 'location';
-        li6.id = 'bbtype';
-        li7.id = 'wfreq';
+        li1.attr('class','id');
+        li2.attr('class','ethnicity');
+        li3.attr('class','gender');
+        li4.attr('class','age');
+        li5.attr('class','location');
+        li6.attr('class','bbtype');
+        li7.attr('class','wfreq');
 
     };
 
@@ -147,7 +147,7 @@ d3.json(url).then(function(data) {
         Plotly.restyle("bubble", "text", [data.samples[name_value].otu_labels]);
         
 
-        d3.select('.id').text("id: " + String(data.metadata[name_value].age));
+        d3.select('.id').text("id: " + String(data.metadata[name_value].id));
         d3.select('.ethnicity').text("ethnicity: "+ String(data.metadata[name_value].ethnicity));
         d3.select('.gender').text("gender: "+ String(data.metadata[name_value].gender));
         d3.select('.age').text("age: "+ String(data.metadata[name_value].age));
